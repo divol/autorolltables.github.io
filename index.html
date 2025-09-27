@@ -1,68 +1,104 @@
 <!DOCTYPE html>
+{% load static %}
+{% load myextras %}
 <html lang="en">
 <head>
 
   <title>Auto Roll Tables</title>
-  <style> html { display: none; } </style>
+  <style> html { display: none; }
+
+  </style>
+    <style>
+        .lienenbas {
+  background-color: darkgray!important;
+  width:340px;
+            border-radius: 25px;
+            padding: 8px;
+
+
+}
+
+    .rowlew {
+ display: flex;
+  flex-wrap: wrap;
+}
+
+  .rowflex {
+   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+  }
+    .flex-items {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+    .on {
+  background-color: #a0a0a0 !important;
+  color: white !important;
+        width:200px;
+}
+</style>
   <script type="text/javascript">
     if (self == top) { document.documentElement.style.display = 'block'; } else { top.location = self.location; }
   </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% header_bs %}
 
-  <link rel="stylesheet" href="css/defaults.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="css/menu.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="{% static '/autorolltables/defaults.css' %}" type="text/css" media="all" />
+  <link rel="stylesheet" href="{% static '/autorolltables/menurmg.css' %}" type="text/css" media="all" />
 
   <!-- Old Online Versions -->
   <!-- <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css"> -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
 
   <!-- Includes -->
-  <link rel="stylesheet" href="includes/bootstrap.min.css">
-  <link rel="stylesheet" href="includes/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="includes/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="includes/bootstrap-theme.min.css"> -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 
-  <!-- <script src="js/menu.js"></script>
-  <script src="js/dungeons.js"></script>
-  <script src="js/factions.js"></script>
-  <script src="js/food.js"></script>
-  <script src="js/magic.js"></script>
-  <script src="js/monsters.js"></script>
-  <script src="js/npcs.js"></script>
-  <script src="js/objects.js"></script>
-  <script src="js/plots.js"></script>
-  <script src="js/settlements.js"></script>
-  <script src="js/vehicles.js"></script>
-  <script src="js/wilderness.js"></script>
-  <script src="js/subrolls.js"></script> -->
-  <script src="js/roll_menu.js"></script>
-  <script src="js/roll_dungeons.js"></script>
-  <script src="js/roll_factions.js"></script>
-  <script src="js/roll_food.js"></script>
-  <script src="js/roll_magic.js"></script>
-  <script src="js/roll_monsters.js"></script>
-  <script src="js/roll_npcs.js"></script>
-  <script src="js/roll_objects.js"></script>
-  <script src="js/roll_plots.js"></script>
-  <script src="js/roll_settlements.js"></script>
-  <script src="js/roll_vehicles.js"></script>
-  <script src="js/roll_wilderness.js"></script>
-  <script src="js/roll_subrolls.js"></script>
+  <script src="{% static '/autorolltables/js/roll_menu.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_dungeons.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_factions.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_food.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_magic.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_monsters.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_npcs.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_objects.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_plots.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_settlements.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_vehicles.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_wilderness.js' %}"></script>
+  <script src="{% static '/autorolltables/js/roll_subrolls.js' %}"></script>
 
+<style>
 
+body- {
+    background-color: rgba(255,255,255,0.5);
+  background-image: url("{% static '/autorolltables/img/dndlogo1.png' %}");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply, screen;
+}
+</style>
 
 </head>
-<body>
-  <div class="bgimage">
-    <img src="includes/dndlogo1.png">
-    <!-- <img src="web/dndlogo1.png" class="bgimage"> -->
-  </div>
+<body >
+{% app_menu %}
+<div class="container">
 
-  <div id="" class="container-fluid">
-    <div class="row">
-      <div class="col-md-12 logo">Auto Roll Tables &nbsp;&nbsp; <img src='img/d20.png' height="28" width="25"/></div>
+  <div id="" class="container">
+    <div class="on row">
+      <div class="">Auto Roll Tables &nbsp;&nbsp; <img alt="d20" src='{% static '/autorolltables/img/d20.png' %}' height="28" width="25"/></div>
     </div>
+
     <div id="menu-container" class="row">
       <div id="menu" class="col-md-11 btn-group">
         <a href="#" class='menuitem-style btn menu-button' aria-hidden='true'><span class="glyphicon glyphicon-th"></span></a>
@@ -70,6 +106,7 @@
       </div>
 
     </div>
+
     <div id="" class="row"></div>
   </div>
 
@@ -86,32 +123,49 @@
   </div>
 
   <div id="page" class="container-fluid">
-
     <div class="row">
       <div class="col-md-12">
         <p class="lead"></p>
       </div>
     </div>
-
-    <div class="row">
-      <div id="leftnav" class="col-xs-12 col-sm-4">
+    <div class="rowlew" >
+        <!-- <div class="row" > -->
+     <!--   <div id="leftnav" class="col-xs-12 col-sm-4"> -->
+      <div id="leftnav" class="col-xs-12 col-sm-4 ">
         <div id="left-display-list"></div>
       </div>
 
-      <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
-         &nbsp;
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg" >
       </div>
+      <!--  <div id="rightnav" class="col-xs-12 col-sm-8"> -->
+      <div id="rightnav" class="col-xs-12 col-sm-8" >
 
-      <div id="rightnav" class="col-xs-12 col-sm-8">
-
-        <ul class="nav nav-tabs">
-          <li id="current-roll-tab" role="presentation" class="active"><a href="#">Current Roll</a></li>
-          <li id="history-roll-tab" role="presentation"><a href="#">History</a></li>
-          <li id="expand-history-tab" class="nav-tabs-right" role="presentation"><a href="#"><span class='glyphicon glyphicon-chevron-down' aria-label="Expand All"></span></a></li>
-          <li id="collapse-history-tab" class="nav-tabs-right" role="presentation"><a href="#"><span class='glyphicon glyphicon-chevron-up' aria-label="Collapse All"></span></a></li>
-          <li id="clear-history-roll-tab" class="nav-tabs-right" role="presentation"><a href="#">Clear History</a></li>
-        </ul>
-
+          <!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li id="current-roll-tab" class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="current-roll" aria-selected="true">Current Roll</button>
+  </li>
+  <li id="history-roll-tab" class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="history" aria-selected="false">History</button>
+  </li>
+  <li id="expand-history-tab" class="nav-item" role="presentation">
+    <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="expand-all" aria-selected="false"><span class='glyphicon glyphicon-chevron-down' aria-label="Expand All"></span></button>
+  </li>
+  <li id="collapse-history-tab" class="nav-item" role="presentation">
+    <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="collapse-all" aria-selected="false"><span class='glyphicon glyphicon-chevron-up' aria-label="Collapse All"></span></button>
+  </li>
+    <li id="clear-history-roll-tab" class="nav-item" role="presentation">
+    <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#" type="button" role="tab" aria-controls="clear-history" aria-selected="false">Clear History</button>
+  </li>
+</ul>
+<!-- Tab panes flex-wrap='wrap' -->
+<div class="tab-content" >
+  <div class="tab-pane active" id="current-roll" role="tabpanel" aria-labelledby="current-roll-tab" tabindex="0"></div>
+  <div class="tab-pane" id="history" role="tabpanel" aria-labelledby="history-roll-tab" tabindex="0"></div>
+  <div class="tab-pane" id="expand-all" role="tabpanel" aria-labelledby="expand-history-tab" tabindex="0"></div>
+  <div class="tab-pane" id="collapse-all" role="tabpanel" aria-labelledby="collapse-history-tab" tabindex="0"></div>
+    <div class="tab-pane" id="clear-history" role="tabpanel" aria-labelledby="clear-history-roll-tab" tabindex="0"></div>
+</div>
         <div id="rightview-current-display" class="rightview-current-display rightview"></div>
         <div id="rightview-history-display" class="rightview-history-display rightview"></div>
 
@@ -123,7 +177,7 @@
 
     <div class="row">&nbsp;</div>
 
-    <div class="row">
+    <div class="rowflex">
       <div id="leftbuttons" class="col-md-4">
         <div class="input-group bottom-nav">
           <input type="text" class="form-control" placeholder="Filter..." aria-describedby="filter" id="filter">
@@ -135,25 +189,25 @@
           </span>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+      <aadiv class="flex-items">
          &nbsp;
-      </div>
-      <div id="rightbuttons" class="col-md-4">
+      </aadiv>
+      <div id="rightbuttons" class="flex-items col-md-4">
         <a class="bottom-nav current-copy-button btn bottom-btn" id="copy-current-button" value="Copy To Clipboard" style="width:100%;"><span class='glyphicon glyphicon-duplicate'></span> Copy Current Roll</a>
       </div>
-      <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+      <aadiv class="flex-items">
          &nbsp;
-      </div>
+      </aadiv>
 
-      <div id="rightbuttons" class="col-md-4">
+      <div id="rightbuttons" class="flex-items col-md-4">
         <a class="bottom-nav history-copy-button btn bottom-btn" id="copy-history-button" value="Copy To Clipboard" style="width:100%;"><span class='glyphicon glyphicon-duplicate'></span> Copy History</a>
       </div>
     </div>
 
     <div class="row">&nbsp;</div>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-less-muted"><a href="credits.html">credits</a> | report issues: on <a href="https://github.com/autorolltables/autorolltables.github.io/issues/new">github</a> or <a href="https://www.reddit.com/message/compose/?to=dangeratio">reddit</a>.
+    <div class=" row">
+      <div class=" col-md-12">
+        <p class="lienenbas text-less-muted"><a href="credits.html">credits</a> | report issues: on <a href="https://github.com/autorolltables/autorolltables.github.io/issues/new">github</a> or <a href="https://www.reddit.com/message/compose/?to=dangeratio">reddit</a>.
         </p>
       </div>
     </div>
@@ -161,7 +215,7 @@
   </div>
 
 <div id='alerts' class='overlay'></div>
-
+  </div>
 </body>
 
 
@@ -171,25 +225,10 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
 
 <!-- Includes -->
-<script src="includes/jquery.min.js"></script>
-<script type="text/javascript" src="js/rolltables.js"></script>
+<!-- <script src="includes/jquery.min.js"></script> -->
 
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=10833414;
-var sc_invisible=1;
-var sc_security="aab08f2d";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web counter"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="http://c.statcounter.com/10833414/0/aab08f2d/1/"
-alt="web counter"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
+<script type="text/javascript" src="{% static '/autorolltables/js/rolltables.js' %}"></script>
+
+
 
 </html>

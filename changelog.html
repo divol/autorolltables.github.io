@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+{% load myextras %}
 <html lang="en">
 <head>
   <title>Auto Roll Tables</title>
@@ -11,24 +13,28 @@
   </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  {% header_bs %}
   <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />-->
   <!--<link rel="stylesheet" href="default.css" type="text/css" media="all" />-->
   <!--<link rel="stylesheet" href="fonts.css" type="text/css" media="all" />-->
 
-  <link rel="stylesheet" href="css/defaults.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/autorolltables/defaults.css' %}" type="text/css" media="all" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+    <style>
+body {
+    background-color: rgba(255,255,255,0.5);
+  background-image: url("{% static '/autorolltables/img/dndlogo1.png' %}");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply, screen;
+}
+</style>
 
 </head>
 
 <body>
 
-  <div class="bgimg">
-    <img src="http://dungeonmastering.net/wp-content/uploads/2015/06/dndlogo1.png" class="bgimage">
-    <!-- <img src="http://uxrepo.com/static/icon-sets/windows/svg/dnd.svg" class="bgimage"> -->
-  </div>
 
   <div id="header" class="container-fluid">
     <div id="logo" class="row">
@@ -273,27 +279,9 @@
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/autorolltables.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<!-- <script type="text/javascript" src="js/autorolltables.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
 
-
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=10833414;
-var sc_invisible=1;
-var sc_security="aab08f2d";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web counter"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="http://c.statcounter.com/10833414/0/aab08f2d/1/"
-alt="web counter"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
 
 </html>

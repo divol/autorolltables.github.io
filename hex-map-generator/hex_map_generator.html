@@ -1,17 +1,20 @@
-<html>
+<!DOCTYPE html>
+{% load static %}
+{% load myextras %}
+<html lang="en">
 <head><title></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
   <!-- Online -->
-  <link rel="stylesheet" href="../includes/bootstrap.min.css">
-  <link rel="stylesheet" href="../includes/bootstrap-theme.min.css">
+  <!-- <link rel="stylesheet" href="../includes/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="../includes/bootstrap-theme.min.css"> -->
 
   <!-- Offline -->
   <!-- <link rel="stylesheet" href="offline/bootstrap.min.css"> -->
   <!-- <link rel="stylesheet" href="offline/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
-
-  <link href="css/menu.css" rel="stylesheet" type="text/css" />
-  <link href="css/map_generator_styles.css" rel="stylesheet" type="text/css" />
+  {% header_bs %}
+  <link href="{% static '/autorolltables/menu.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static '/autorolltables/map_generator_styles.css' %}" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -20,12 +23,13 @@
 
 <div class="toolbar container">
   <div class="row title-row">
-    <div class="title col-md-12 logo">Hex Map Generator&nbsp;&nbsp;&nbsp;<img src="img/d20.png" width="25" height="28"></div>
+      {% static '/autorolltables/img/d20.png' %}
+    <div class="title col-md-12 logo">Hex Map Generator&nbsp;&nbsp;&nbsp;<img alt="d20 icone" src="{% static '/autorolltables/img/d20.png' %}" width="25" height="28"></div>
   </div>
   <div class="row padding-below">
     <div class="button menu-button">&nbsp;<span class="glyphicon glyphicon-th"></span>&nbsp;</div>
     &nbsp;
-    <div class="button" id="large">Small</span></div>
+    <div class="button" id="large">Small</div>
     <div class="button" id="medium">Medium</div>
     <div class="button" id="small">Large</div>
     &nbsp;
@@ -113,31 +117,12 @@
 <!-- <script src="offline/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
 
 <!-- Online -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ocanvas/2.8.7/ocanvas.min.js"></script>
-<script src="../includes/jquery.min.js"></script>
-<script src="../includes/bootstrap.min.js"></script>
-<script src="js/map_generator.js"></script>
 
+<script src="{% static '/autorolltables/js/ocanvas-2.8.7.min.js' %}"></script>
+<!-- <script src="../includes/jquery.min.js"></script> -->
+<!-- <script src="../includes/bootstrap.min.js"></script> -->
+<script src="{% static '/autorolltables/js/map_generator.js' %}"></script>
 
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-//<![CDATA[
-var sc_project=11361152;
-var sc_invisible=1;
-var sc_security="941940fb";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter_xhtml.js'></"+"script>");
-//]]>
-</script>
-<noscript><div class="statcounter"><a title="web counter"
-href="http://statcounter.com/" class="statcounter"><img
-class="statcounter"
-src="//c.statcounter.com/11361152/0/941940fb/1/" alt="web
-counter" /></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
 
 
 </body>
